@@ -77,9 +77,9 @@ class App extends Component {
 
   quebraBiscoito(){
     let numeroAleatorio = crypto.getRandomValues(new Uint8Array(10))
-    if (numeroAleatorio[1] > 60){
+    if (numeroAleatorio[1] > 59){
       this.setState({
-        textoFrase: 'Tente novamente seu biscoito não tem nenhuma mensagem da Sorte!',
+        textoFrase: 'Tente novamente seu biscoito não tem nenhuma mensagem da Sorte!', 
         img: require('./src/biscoito.png')
       });
     }else{
@@ -102,8 +102,9 @@ class App extends Component {
       >
       </Image>
       <Text 
-      style={styles.textoFrase}
-      > {this.state.textoFrase} </Text>
+        style={styles.textoFrase}
+        > {this.state.textoFrase} 
+      </Text>
       <TouchableOpacity style={styles.botao} onPress={this.quebraBiscoito}>
         <View style={styles.btnArea}>
           <Text
@@ -154,6 +155,13 @@ const styles = StyleSheet.create({
     color:'#dd7b22',
     margin:30,
     fontStyle:'italic'
+},  
+  textoFraseSemSorte:{
+  textAlign:'center',
+  fontSize:30,
+  color:'red',
+  margin:30,
+  fontStyle:'italic'
 },
   img:{
     height:200,
